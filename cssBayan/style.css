@@ -1,0 +1,30 @@
+/* Bayan base formatting */
+.bayan { width: 800px; margin: auto; background: pink; font-family: Tahoma; }
+.bayan ul { margin: 0; padding: 0; }
+.bayan li { list-style: none; margin: 0; position: relative; }
+.bayan h1 { margin: 0; padding: 10px 0; }
+.bayan h2 { border-top: 1px solid #666; background: green; margin: 0; padding: 5px 0; color: blue; }
+.bayan:hover h2 { color: #000; }
+
+
+
+/* Bayan functionality */
+.bayan-radio { display: none; }
+.bayan-radio:checked + h2 { color: #000; }
+
+.bayan-content { display: none; }
+.bayan label { cursor: pointer; }
+.bayan label:hover .bayan-content,
+.bayan-radio:checked ~ .bayan-content { display: block; }
+.bayan label:active h2 { color: green; }
+
+.bayan .ico-close {
+    position: absolute; right: 10px; top: 10px;
+    width: 20px; height: 20px;
+    background: 50% 50% url('./assets/xmark-solid.svg');
+    background-size: cover;
+}
+
+
+/* Meme cosmetics */
+.memes .bayan-content { text-align: center; }
