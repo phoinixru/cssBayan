@@ -44,9 +44,11 @@
 
 .bayan__radio:checked + .bayan__tab__header { color: var(--tab-header-color-checked); }
 
-.bayan__content { height: 0; overflow: hidden; }
+.bayan__content { max-height: 0; overflow: hidden; transition: max-height .5s; }
 .bayan__label:hover .bayan__content,
-.bayan__radio:checked ~ .bayan__content { height: auto; }
+.bayan__radio:checked ~ .bayan__content { max-height: 1000px; }
 
 /* Meme cosmetics */
-.memes img { margin: auto; display: block; }
+.memes img { margin: 1rem auto; display: block; transition: transform 500ms, opacity 200ms; transform: scale(0.2); opacity: .5; }
+.memes .bayan__label:hover img,
+.memes .bayan__radio:checked ~ .bayan__content img { opacity: 1; transform: scale(1); }
