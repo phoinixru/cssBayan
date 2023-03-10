@@ -1,16 +1,18 @@
+/* simple reset */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
 /* Bayan base formatting */
 .bayan { max-width: 800px; margin: auto; background: pink; font-family: Tahoma; }
-.bayan__list { margin: 0; padding: 0; }
-.bayan__tab { list-style: none; margin: 0; }
+.bayan__tab { list-style: none; }
 
-.bayan__title { margin: 0; font-size: 2rem; line-height: 4rem; }
+.bayan__title { font-size: 2rem; line-height: 4rem; }
 
 .bayan__tab__header {
     display: flex; align-items: center;
     border-top: 1px solid #666; background: red;
 }
 .bayan__tab__title {
-    flex: 1; font-size: 1.5rem; line-height: 1; padding: .5rem 0; margin: 0;
+    flex: 1; font-size: 1.5rem; line-height: 1; padding: .5rem 0;
     color: rgb(69, 69, 255);
     white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
 }
