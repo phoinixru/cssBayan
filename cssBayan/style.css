@@ -2,6 +2,8 @@
   --tab-header-color: rgb(69, 69, 255);
   --tab-header-color-checked: #000;
   --tab-header-color-active: rgb(69, 69, 255);
+
+  --tab-header-border-color: #666;
 }
 
 /* simple reset */
@@ -36,7 +38,7 @@
 .bayan__tab__header {
   display: flex;
   align-items: center;
-  border-top: 1px solid #666;
+  border-top: 0.15rem solid var(--tab-header-border-color);
   background: red;
   color: var(--tab-header-color);
   font-size: 1.5rem;
