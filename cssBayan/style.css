@@ -18,6 +18,7 @@
   margin: auto;
   background: pink;
   font-family: Tahoma;
+  min-width: 20rem;
 }
 
 .bayan__tab {
@@ -59,7 +60,7 @@
   height: 2em;
   transform: rotate(45deg);
   transition: transform 200ms;
-  background: #000;
+  background: var(--tab-header-color-checked);
   -webkit-mask: url(assets/xmark-solid.svg) center center / 33% no-repeat;
   mask: url(assets/xmark-solid.svg) center center / 33% no-repeat;
 }
@@ -119,7 +120,7 @@
 
 @media (hover: hover) {
   .bayan:hover .bayan__tab__header {
-    color: #000;
+    color: var(--tab-header-color-checked);
   }
 
   .bayan__tab__icon {
@@ -158,18 +159,30 @@
 
 
 @media (min-width: 320px) {
+  :root {
+    font-size: 1em;
+  }
+
   .bayan {
     max-width: 90%;
   }
 }
 
 @media (min-width: 820px) {
+  :root {
+    font-size: 1.2em;
+  }
+
   .bayan {
     max-width: 50rem;
   }
 }
 
 @media (min-width: 1920px) {
+  :root {
+    font-size: 1.5em;
+  }
+
   .bayan {
     max-width: 60rem;
   }
