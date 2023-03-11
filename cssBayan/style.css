@@ -92,6 +92,10 @@
   transition: 100ms;
 }
 
+.bayan__radio:checked~.bayan__tab__header {
+  color: var(--tab-header-color-checked);
+}
+
 .bayan__label:active~.bayan__tab__header {
   color: var(--tab-header-color-active);
 }
@@ -100,9 +104,6 @@
   background-color: var(--tab-header-color-active);
 }
 
-.bayan__radio:checked~.bayan__tab__header {
-  color: var(--tab-header-color-checked);
-}
 
 .bayan__content {
   max-height: 0;
@@ -116,6 +117,10 @@
 }
 
 /* Meme cosmetics */
+.memes .bayan__content {
+  text-align: center;
+}
+
 .memes img {
   margin: 1rem auto;
   display: block;
