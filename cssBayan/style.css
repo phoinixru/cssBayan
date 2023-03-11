@@ -5,51 +5,114 @@
 }
 
 /* simple reset */
-* { margin: 0; padding: 0; box-sizing: border-box; }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 /* Bayan base formatting */
-.bayan { max-width: 800px; margin: auto; background: pink; font-family: Tahoma; }
-.bayan__tab { list-style: none; }
+.bayan {
+    max-width: 800px;
+    margin: auto;
+    background: pink;
+    font-family: Tahoma;
+}
 
-.bayan__title { font-size: 2rem; line-height: 4rem; }
+.bayan__tab {
+    list-style: none;
+}
+
+.bayan__title {
+    font-size: 2rem;
+    line-height: 4rem;
+}
 
 .bayan__tab__header {
-    display: flex; align-items: center;
-    border-top: 1px solid #666; background: red;
+    display: flex;
+    align-items: center;
+    border-top: 1px solid #666;
+    background: red;
     color: var(--tab-header-color);
 }
+
 .bayan__tab__title {
-    flex: 1; font-size: 1.5rem; line-height: 1; padding: .5rem 0;
-    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    flex: 1;
+    font-size: 1.5rem;
+    line-height: 1;
+    padding: .5rem 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .bayan__tab__icon {
-    font: 1.5rem/1 Arial; padding: .5rem;
-    transform: rotate(45deg); display: none;
+    font: 1.5rem/1 Arial;
+    padding: .5rem;
+    transform: rotate(45deg);
+    display: none;
     transition: transform 200ms;
 }
-.bayan:hover .bayan__tab__icon { display: block; }
+
+.bayan:hover .bayan__tab__icon {
+    display: block;
+}
 
 .bayan__label:hover .bayan__tab__icon,
-.bayan__radio:checked ~ .bayan__tab__header .bayan__tab__icon { transform: rotate(90deg); }
+.bayan__radio:checked~.bayan__tab__header .bayan__tab__icon {
+    transform: rotate(90deg);
+}
 
-.bayan:hover .bayan__tab__header { color: #000; }
+.bayan:hover .bayan__tab__header {
+    color: #000;
+}
 
 
 /* Bayan functionality */
-.bayan__radio { display: none; }
-.bayan__label { cursor: pointer; display: block; }
+.bayan__radio {
+    display: none;
+}
 
-.bayan__label:active { opacity: 0.7; transition: 100ms; }
-.bayan__label:active .bayan__tab__header { color: var(--tab-header-color-active); }
+.bayan__label {
+    cursor: pointer;
+    display: block;
+}
 
-.bayan__radio:checked + .bayan__tab__header { color: var(--tab-header-color-checked); }
+.bayan__label:active {
+    opacity: 0.7;
+    transition: 100ms;
+}
 
-.bayan__content { max-height: 0; overflow: hidden; transition: max-height .5s; }
+.bayan__label:active .bayan__tab__header {
+    color: var(--tab-header-color-active);
+}
+
+.bayan__radio:checked+.bayan__tab__header {
+    color: var(--tab-header-color-checked);
+}
+
+.bayan__content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .5s;
+}
+
 .bayan__label:hover .bayan__content,
-.bayan__radio:checked ~ .bayan__content { max-height: 1000px; }
+.bayan__radio:checked~.bayan__content {
+    max-height: 1000px;
+}
 
 /* Meme cosmetics */
-.memes img { margin: 1rem auto; display: block; transition: transform 500ms, opacity 200ms; transform: scale(0.2); opacity: .5; }
+.memes img {
+    margin: 1rem auto;
+    display: block;
+    transition: transform 500ms, opacity 200ms;
+    transform: scale(0.2);
+    opacity: .5;
+}
+
 .memes .bayan__label:hover img,
-.memes .bayan__radio:checked ~ .bayan__content img { opacity: 1; transform: scale(1); }
+.memes .bayan__radio:checked~.bayan__content img {
+    opacity: 1;
+    transform: scale(1);
+}
