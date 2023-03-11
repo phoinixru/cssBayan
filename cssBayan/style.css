@@ -26,11 +26,12 @@
 .bayan__tab__icon {
     font: 1.5rem/1 Arial; padding: .5rem;
     transform: rotate(45deg); display: none;
+    transition: transform 200ms;
 }
 .bayan:hover .bayan__tab__icon { display: block; }
 
 .bayan__label:hover .bayan__tab__icon,
-.bayan__radio:checked ~ .bayan__tab__header .bayan__tab__icon { transform: rotate(0); }
+.bayan__radio:checked ~ .bayan__tab__header .bayan__tab__icon { transform: rotate(90deg); }
 
 .bayan:hover .bayan__tab__header { color: #000; }
 
