@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Alice&display=swap');
+
+:root {
+  --tab-header-color: rgb(67, 77, 146);
+  --tab-header-color-checked: #000;
+  --tab-header-color-active: rgb(67, 77, 146);
+
+  --tab-header-border-color: rgb(67, 77, 146);
+}
+
+/* simple reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #ECE9E6;
+  background: -webkit-linear-gradient(to right, #FFFFFF, #ECE9E6);
+  background: linear-gradient(to right, #FFFFFF, #ECE9E6);
+}
+
+/* Bayan base formatting */
+.bayan {
+  margin: auto;
+  font-family: "Alice", Tahoma;
+  min-width: 20rem;
+}
+
+.bayan__tab {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.bayan__title {
+  font-size: 2rem;
+  line-height: 4rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.bayan__tab__header {
+  display: flex;
+  align-items: center;
+  border-top: 0.15rem solid var(--tab-header-border-color);
+  color: var(--tab-header-color);
+  font-size: 1.5rem;
+}
+
+.bayan__tab__title {
+  flex: 1;
+  font-size: 1em;
+  line-height: 1;
+  padding: .5em 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.bayan__tab__icon {
+  width: 2em;
+  height: 2em;
+  transform: rotate(45deg);
+  transition: transform 200ms;
+  background: var(--tab-header-color-checked);
+  -webkit-mask-image: url('assets/xmark-solid.svg');
+  -webkit-mask-position: center;
+  -webkit-mask-size: 33%;
+  -webkit-mask-repeat: no-repeat;
+  mask-image: url('assets/xmark-solid.svg');
+  mask-position: center;
+  mask-size: 33%;
+  mask-repeat: no-repeat;
+}
+
+.bayan__radio:checked~.bayan__tab__header .bayan__tab__icon {
+  transform: rotate(90deg);
+}
+
+/* Bayan functionality */
+.bayan__radio {
+  display: none;
+}
+
+.bayan__label {
+  height: 100vh;
+  margin-bottom: -100vh;
+  z-index: 1;
+}
+
+.bayan__label:active~* {
+  opacity: 0.7;
+  transition: 100ms;
+}
+
+.bayan__radio:checked~.bayan__tab__header {
+  color: var(--tab-header-color-checked);
+}
+
+.bayan__content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .5s;
+}
+
+.bayan__radio:checked~.bayan__content {
+  max-height: 100vh;
+}
+
+/* Meme cosmetics */
+.memes .bayan__content {
+  text-align: center;
+}
+
+.memes img {
+  margin: 1rem auto;
+  transition: transform 500ms, opacity 200ms;
+  transform: scale(0.2);
+  opacity: .5;
+  max-width: 90%;
+  font-size: 2rem;
+}
+
+.memes .bayan__radio:checked~.bayan__content img {
+  opacity: 1;
+  transform: scale(1);
+}
+
+@media (hover: hover) {
+  .bayan:hover .bayan__tab__header {
+    color: var(--tab-header-color-checked);
+  }
+
+  .bayan__tab__icon {
+    display: none;
+  }
+
+  .bayan:hover .bayan__tab__icon {
+    display: block;
+  }
+
+  .bayan__radio:hover~.bayan__tab__header .bayan__tab__icon {
+    transform: rotate(90deg);
+  }
+
+  .bayan__label {
+    cursor: pointer;
+  }
+
+  .bayan__label:active~.bayan__tab__header {
+    color: var(--tab-header-color-active);
+  }
+
+  .bayan__label:active~.bayan__tab__header .bayan__tab__icon {
+    background-color: var(--tab-header-color-active);
+  }
+
+  .bayan__label:hover~.bayan__content {
+    max-height: 100vh;
+  }
+
+  .memes .bayan__label:hover~.bayan__content img {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+@media (min-width: 320px) {
+  :root {
+    font-size: 1em;
+  }
+
+  .bayan {
+    max-width: 90%;
+  }
+}
+
+@media (min-width: 820px) {
+  :root {
+    font-size: 1.2em;
+  }
+
+  .bayan {
+    max-width: 40rem;
+  }
+}
+
+@media (min-width: 1920px) {
+  :root {
+    font-size: 1.5em;
+  }
+
+  .bayan {
+    max-width: 50rem;
+  }
+}
